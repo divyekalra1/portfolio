@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Divye Kalra</title>
+<!-- begin _includes/seo.html --><title>Resume - Divye Kalra</title>
 <meta name="description" content="An amazing website.">
 
 
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Divye Kalra">
-<meta property="og:title" content="Divye Kalra">
-<meta property="og:url" content="http://localhost:4000/">
+<meta property="og:title" content="Resume">
+<meta property="og:url" content="http://localhost:4000/contact/">
 
 
   <meta property="og:description" content="An amazing website.">
@@ -41,7 +41,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/">
+<link rel="canonical" href="http://localhost:4000/contact/">
 
 
 
@@ -92,7 +92,7 @@
 
   </head>
 
-  <body class="layout--home">
+  <body class="layout--default">
     <nav class="skip-links">
   <ul>
     <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
@@ -134,145 +134,114 @@
 
 
     <div class="initial-content">
-      
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="your-styles.css"> <!-- Link to your custom CSS file -->
+    <title>Contact</title>
+    <style>
+        /* Add CSS styles for centering the form */
+        .contact-section {
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px; /* Adjust the maximum width as needed */
+            margin: 0 auto; /* Center the form horizontally */
+            padding: 20px; /* Add padding to the form container */
+        }
+
+        /* Customize the width of name and email input fields */
+        .form-group.label-width {
+            max-width: 400px; /* Set the width of name and email input boxes */
+            margin: 0 auto; /* Center the input fields horizontally */
+        }
+
+        /* Set the number of rows for the message field */
+        #message {
+            rows: 4; /* Set the number of rows to 4 for the message field */
+            max-width: 100%; /* Allow the message field to expand to the full container width */
+        }
+
+        /* Add styles for social media icons */
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin-right: 20px; /* Adjust spacing between icons */
+            text-decoration: none;
+            color: #333;
+        }
+        .social-icons img {
+            width: 32px; /* Set the width of social media icons */
+            height: 32px; /* Set the height of social media icons */
+        }
+
+        /* Center the section title */
+        .section-title {
+            text-align: center;
+        }
+
+        /* Rest of your custom CSS styles */
+    </style>
+</head>
+<body>
 
 
+<!-- Contact Form -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://github.com/divyekalra1" target="_blank">
+                <img src="../github-logo.png" alt="GitHub" width="32" height="32">
+            </a>
+            <a href="https://www.linkedin.com/in/divyekalra1" target="_blank">
+                <img src="../linkedin-logo.png" alt="LinkedIn" width="32" height="32">
+            </a>
+            <a href="mailto:divyekalra2@gmail.com">
+                <img src="../email-logo.png" alt="Email" width="32" height="32">
+            </a>
+        </div>
 
-<div id="main" role="main">
-  
-  <div class="sidebar sticky">
-  
+        <div class="form-container">
+            <form id="contact-form" action="/process-contact.php" method="post">
+                <!-- Name Field -->
+                <div class="form-group label-width">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
+                <!-- Email Field -->
+                <div class="form-group label-width">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
-<div itemscope itemtype="https://schema.org/Person" class="h-card">
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
 
-  
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit" class="submit-button">Send Message</button>
+                </div>
+            </form>
+        </div>
 
-  <div class="author__content">
-    <h3 class="author__name p-name" itemprop="name">
-      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url"> </a>
-    </h3>
-    
-      <div class="author__bio p-note" itemprop="description">
-        <p>Undergraduate at BITS Pilani, Hyderabad Campus, India</p>
-
-      </div>
-    
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      
-        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
-          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Sydney, NSW, Australia</span>
-        </li>
-      
-
-      
         
-          
-            <li><a href="mailto:divyekalra2@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
-          
-        
-          
-            <li><a href="https://divyekalra1.github.io/portfolio/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span></a></li>
-          
-        
-          
-            <li><a href="https://github.com/divyekalra1" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
-          
-        
-          
-            <li><a href="https://www.linkedin.com/in/divyekalra1/" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
-          
-        
-      
+    </div>
+</section>
 
-      
+</body>
+</html>
 
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      <!--
-  <li>
-    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
-      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
-    </a>
-  </li>
--->
-    </ul>
-  </div>
-</div>
-
-  
-  </div>
-
-
-
-  <div class="archive">
-    
-      <h1 id="page-title" class="page__title"></h1>
-    
-    
-
-<h3 class="archive__subtitle">Recent posts</h3>
-
-
-
-
-<div class="entries-list">
-  
-</div>
-
-
-
-
-  </div>
-</div>
     </div>
 
     <!--  -->

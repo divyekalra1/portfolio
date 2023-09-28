@@ -1,11 +1,10 @@
 ---
 title: "Resume"
 layout : default
-permalink: /
+permalink: /resume/
 ---
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>My Resume</title>
     <style>
@@ -16,8 +15,6 @@ permalink: /
         margin: 0;
         padding: 0;
       }
-
-
 
       /* Styling for the main content */
       main {
@@ -44,6 +41,8 @@ permalink: /
         margin-left: 20%;
         margin-right: 10%;
         border-radius: 0%;
+        margin-top: 20% !important; /* Adjust the margin as needed */
+
       }
       .new-tab-btn:visited {
         text-decoration: none;
@@ -51,24 +50,17 @@ permalink: /
       a {
         text-decoration: none;
       }
-
-
+    
     </style>
   </head>
-
   <body>
-
     <main>
       <section id="resume">
-        
         <div class="pdf-container">
-            <object data="Latest-Resume.pdf" width="1105" height="550" type='application/pdf'></object>
+            <object data="../Latest-Resume.pdf" width="1105" height="570" type='application/pdf'></object>
         </div>
-        <a target="_blank" href="Latest-Resume.pdf" class="new-tab-btn">Open Resume</a>
+        <a target="_blank" href="../Latest-Resume.pdf" class="new-tab-btn">Open Resume</a>
       </section>
     </main>
-    
   </body>
-
-  
 </html>
