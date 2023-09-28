@@ -1,0 +1,112 @@
+---
+title: "Resume"
+layout : default
+permalink: /contact/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="your-styles.css"> <!-- Link to your custom CSS file -->
+    <title>Contact</title>
+    <style>
+        /* Add CSS styles for centering the form */
+        .contact-section {
+            text-align: center;
+        }
+
+        .form-container {
+            max-width: 600px; /* Adjust the maximum width as needed */
+            margin: 0 auto; /* Center the form horizontally */
+            padding: 20px; /* Add padding to the form container */
+        }
+
+        /* Customize the width of name and email input fields */
+        .form-group.label-width {
+            max-width: 400px; /* Set the width of name and email input boxes */
+            margin: 0 auto; /* Center the input fields horizontally */
+        }
+
+        /* Set the number of rows for the message field */
+        #message {
+            rows: 4; /* Set the number of rows to 4 for the message field */
+            max-width: 100%; /* Allow the message field to expand to the full container width */
+        }
+
+        /* Add styles for social media icons */
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin-right: 20px; /* Adjust spacing between icons */
+            text-decoration: none;
+            color: #333;
+        }
+        .social-icons img {
+            width: 32px; /* Set the width of social media icons */
+            height: 32px; /* Set the height of social media icons */
+        }
+
+        /* Center the section title */
+        .section-title {
+            text-align: center;
+        }
+
+        /* Rest of your custom CSS styles */
+    </style>
+</head>
+<body>
+
+
+<!-- Contact Form -->
+<section id="contact" class="contact-section">
+    <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://github.com/divyekalra1" target="_blank">
+                <img src="../github-logo.png" alt="GitHub" width="32" height="32">
+            </a>
+            <a href="https://www.linkedin.com/in/divyekalra1" target="_blank">
+                <img src="../linkedin-logo.png" alt="LinkedIn" width="32" height="32">
+            </a>
+            <a href="mailto:divyekalra2@gmail.com">
+                <img src="../email-logo.png" alt="Email" width="32" height="32">
+            </a>
+        </div>
+
+        <div class="form-container">
+            <form id="contact-form" action="/process-contact.php" method="post">
+                <!-- Name Field -->
+                <div class="form-group label-width">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group label-width">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit" class="submit-button">Send Message</button>
+                </div>
+            </form>
+        </div>
+
+        
+    </div>
+</section>
+
+</body>
+</html>
