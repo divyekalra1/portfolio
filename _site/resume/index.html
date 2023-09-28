@@ -134,66 +134,79 @@
     <div class="initial-content">
       <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Resume</title>
-    <style>
-      /* Basic styling for the page */
-      
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
 
-      /* Styling for the main content */
-      main {
-        padding: 30px;
-      }
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MQ42FBLE9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      /* Styling for the PDF viewer */
-      .pdf-container {
-        border: 1px solid #ccc;
-        height: 550px;
-        margin-bottom: 2%;    
-        margin-left: 20%;
-        margin-right: 20%;
-      }
+    gtag('config', 'G-9MQ42FBLE9');
+  </script>
+  <title>My Resume</title>
+  <style>
+    /* Basic styling for the page */
 
-      /* Styling for the download button */
-      .new-tab-btn {
-        background-color: #333;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        margin-left: 20%;
-        margin-right: 10%;
-        border-radius: 0%;
-        margin-top: 20% !important; /* Adjust the margin as needed */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-      }
-      .new-tab-btn:visited {
-        text-decoration: none;
-      }
-      a {
-        text-decoration: none;
-      }
-    
-    </style>
-  </head>
-  <body>
-    <main>
-      <section id="resume">
-        <div class="pdf-container">
-            <object data="../Latest-Resume.pdf" width="1105" height="570" type='application/pdf'></object>
-        </div>
-        <a target="_blank" href="../Latest-Resume.pdf" class="new-tab-btn">Open Resume</a>
-      </section>
-    </main>
-  </body>
+    /* Styling for the main content */
+    main {
+      padding: 30px;
+    }
+
+    /* Styling for the PDF viewer */
+    .pdf-container {
+      border: 1px solid #ccc;
+      height: 550px;
+      margin-bottom: 2%;
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+
+    /* Styling for the download button */
+    .new-tab-btn {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 20%;
+      margin-right: 10%;
+      border-radius: 0%;
+      margin-top: 20% !important;
+      /* Adjust the margin as needed */
+
+    }
+
+    .new-tab-btn:visited {
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section id="resume">
+      <div class="pdf-container">
+        <object data="../Latest-Resume.pdf" width="1105" height="570" type='application/pdf'></object>
+      </div>
+      <a target="_blank" href="../Latest-Resume.pdf" class="new-tab-btn">Open Resume</a>
+    </section>
+  </main>
+</body>
+
 </html>
-
     </div>
 
     <!--  -->
