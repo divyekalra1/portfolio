@@ -105,8 +105,8 @@ analytics:
 # Site Author
 author:
   name             : " "
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Undergraduate student at BITS Pilani, Hyderabad Campus, India"
+  # avatar           : "photo.jpeg"
+  bio              : "Undergraduate @ BITS Pilani, Hyderabad Campus, India"
   location         : "Sydney, NSW, Australia"
   # email            : divyekalra2@gmail.com
   links:
