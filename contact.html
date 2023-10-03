@@ -27,7 +27,7 @@ permalink: /contact/
         }
 
         .form-container {
-            max-width: 600px;
+            max-width: 1000px;
             /* Adjust the maximum width as needed */
             margin: 0 auto;
             /* Center the form horizontally */
@@ -45,7 +45,8 @@ permalink: /contact/
 
         /* Set the number of rows for the message field */
         #message {
-            rows: 4;
+            font-size: xx-small;
+            /* rows: 4; */
             /* Set the number of rows to 4 for the message field */
             max-width: 100%;
             /* Allow the message field to expand to the full container width */
@@ -73,6 +74,15 @@ permalink: /contact/
         /* Center the section title */
         .section-title {
             text-align: center;
+        }
+        .key-section-title {
+            text-align: center;
+            font-size: medium;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .key-class {
+            font-size: medium;
+            font-family: 'Courier New', Courier, monospace;
         }
 
         /* Rest of your custom CSS styles */
@@ -103,26 +113,47 @@ permalink: /contact/
                 <form id="contact-form" action="/process-contact.php" method="post">
                     <!-- Name Field -->
                     <div class="form-group label-width">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
+                        <h6 class="key-section-title">Try sending an encrypted email!</label>
 
-                    <!-- Email Field -->
-                    <div class="form-group label-width">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
                     </div>
-
                     <!-- Message Field -->
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
+                    <!-- <div class="form-group"> -->
+                        <pre class="key-class">
+-----BEGIN PGP PUBLIC KEY BLOCK-----
 
-                    <!-- Submit Button -->
-                    <div class="form-group">
-                        <button type="submit" class="submit-button">Send Message</button>
-                    </div>
+mQEJBGUb1IQBB+Chousih9acE7TIHsNcftX8i8jLfuMS0VTQIJKhvF3KIDncvt8h
+oQxBwikzlP+YqvLYAwfm00C8az2K2rSihf6gmu4a6+51dWSxWmTlZ4OOrdpam2qs
+MvSPe2tJFUr+6PewideFrvmExsN3exDPSCWaTaYEAd7W6oz4yQKBvBYNMtJM1ksZ
+lLPqOXe43e6duGqhXgNkT79rjCwnt7rXQRf/yjPUwHK3HnGMZgV8+LO08DJFn3hn
+LcqpCQDxYYtQtj+07ilo+7n/N5xGeKXKDWwbAyVkxnbm6fBN8xJMSoiChQ/IB0He
+OHHYhaunAjlvzAJPgs/riIQBXxta/+0AEQEAAbQ6RGl2eWUgS2FscmEgKGdwZy1l
+bWFpbC1lbmNyeXB0aW9uKSA8ZGl2eWVrYWxyYTJAZ21haWwuY29tPokBSgQTAQoA
+OBYhBLx7pEu7kb37J0SJGfYuRv1x0ecDBQJlG9SEAhsDBQsJCAcCBhUKCQgLAgQW
+AgMBAh4BAheAAAoJEPYuRv1x0ecD+9wH33JXriMWVwoO+S/UvqjSWkfYL6xAspqD
+yNNKSDnHYMZz5HUqssj0hJPGlfP9569a/So5qVOMoMxgKRDLXdLwxLW5xUuqBxOb
+huSmpXneaVgpe98uvWbQ6zC8G2a01jSXtZwXDUkBVCBE9qWHLe08IsyiDhOgYqxE
+S6obR32rxIhXaIbr8LQ/9H4yZblZ1snQcI/NrCCOYnPoznb9U//1kBdI5eWGVrZY
+KhBp8hfWlYIl7o0t9A8m9Ngz81clEzCEcRkSVnY56ZXI5mw51njOr7nMs5ae1TK6
+unpSO/Ppd30hGCLwa2kGgQK1M0z1KCn7mz990Mj+xup296xPP7kBCQRlG9SEAQfg
+yGICKfNEgswqrhA7zLtC2zki+Ow2M0OwCf7dyi2ELXMxbcxtUPYPDlsHE/i0cPKJ
+106Ds10LmzWmyiN2Nplq55UxXjsFZV3mo4IAJ33W49lPvHliBqtFHiUsHI79A3WT
+h2zyMmfnxtQkSjQjV3SWvGh/uhsNfnBvwemDR2ELiWGs1s6gkjKhwxDhw3iPfS7v
+ARHTvYFuOb6AuSG38igBcM/+cN1OS0zUfwF2HmWLeQYa00NhF1mywHc9m1kIpJvV
+XIOlRRBHMHWhJFh1LQU/Bxec7iryU6BHaVKYLNJrsskQmAZk5z+Z42XWz5MAQxa3
+FQ0FoqOCEw9KaMRPABEBAAGJATIEGAEKACAWIQS8e6RLu5G9+ydEiRn2Lkb9cdHn
+AwUCZRvUhAIbDAAKCRD2Lkb9cdHnA13zB+CEsgRAXwX2aY0fLYk0JsEUXhuX/KCN
+9+9JPQ4eXOI2Gm6mPbimz2CFVEHsXgE0k6gZMKO9dtdABloJA10R6A0e6zetVsJC
+38myjH0wdfcjWr0WH0D/u1BGjA/fsEclp7DrtPxTutF9UclUtO6PIAFkKmy0Gr9S
+jK7wQPngvzNm8N1ImFZ63mg2utEM6ewqJpodhtI1UdGhAwGfXb1NKdXrwwaci/c0
+EmjUTKJwGur4CQEMPbaDNVRyh4+uk6/l4XeEQdyNsnCSFwJFXaFa1JCZ3PBOm5b0
+lB6QZgN/XTdPkb1skKplOLFKPv1wseEVZz3mKOcLYjaT6wsbXJo=
+=dm/J
+-----END PGP PUBLIC KEY BLOCK-----
+                            
+                        </pre>
+                        
+
+                    <!-- </div> -->
                 </form>
             </div>
 
