@@ -6,7 +6,52 @@ main:
   #   url: /projects/
   - title: "Resume"
     url: /resume/
+  - title: "Blogs"
+    url: /blogs/
   - title: "Publications"
     url: /publications/
   - title: "Contact"
     url: /contact/
+blogs_nav:
+  - title: "All Blogs"
+    url: /blogs/
+  - title: "Duke Nukem"
+    url: /blogs/duke-nukem/
+  - title: "Exploring Topics"
+    url: /blogs/exploring-topics/
+  - title: "HTB‑CPTs"
+    url: /blogs/htb-cpts/
+
+htb_cpts_nav:
+  - title: "Pentesting Process"
+    url: /blogs/htb-cpts/pentesting-process/
+    # children:
+    # - title: "Pentesting Process - Part 2"
+    #   url: /blogs/htb-cpts/pentesting-process-2/
+  - title: "Getting Started"
+    url: /blogs/htb-cpts/getting-started/
+  # - title: "ZooZoo"
+  #   url: /blogs/htb-cpts/zoozoo/
+pwned_boxes_nav:
+  - title: "Knowledge Check"
+    url: /blogs/htb-cpts/knowledge-check/
+    # children:
+    # - title: "Pentesting Process - Part 2"
+    #   url: /blogs/htb-cpts/pentesting-process-2/
+  - title: "Nibbles"
+    url: /blogs/htb-cpts/nibbles/
+  # - title: "ZooZoo"
+  #   url: /blogs/htb-cpts/zoozoo/
+
+exploring_topics_nav:
+  - title: "Topics to be Documented"
+    url: /blogs/exploring-topics/tbd
+  - title: "Proxies"
+    url: /blogs/exploring-topics/proxies/
+  - title: "VPN"
+    url: /blogs/exploring-topics/vpn/
+  - title: "OSI Model"
+    url: /blogs/exploring-topics/osi/
+  # Add future items here.
+
+

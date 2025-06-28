@@ -241,7 +241,19 @@ whitelist:
   - jekyll-feed
   - jekyll-include-cache
 
-
+collections:
+  blogs:
+    output: true
+    permalink: /blogs/:name/
+  htb-cpts:
+    output: true
+    permalink: /blogs/htb-cpts/:name/
+  pwned-boxes:
+    output: true
+    permalink: /blogs/htb-cpts/pwned-boxes/:name/
+  exploring-topics:
+    output: true
+    permalink: /blogs/exploring-topics/:name/
 # Archives
 #  Type
 #  - GitHub Pages compatible archive pages built with Liquid ~> type: liquid (default)
