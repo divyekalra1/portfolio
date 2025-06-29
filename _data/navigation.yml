@@ -34,12 +34,12 @@ htb_cpts_nav:
   #   url: /blogs/htb-cpts/zoozoo/
 pwned_boxes_nav:
   - title: "Knowledge Check"
-    url: /blogs/htb-cpts/knowledge-check/
+    url: /blogs/htb-cpts/pwned-boxes/knowledge-check/
     # children:
     # - title: "Pentesting Process - Part 2"
     #   url: /blogs/htb-cpts/pentesting-process-2/
   - title: "Nibbles"
-    url: /blogs/htb-cpts/nibbles/
+    url: /blogs/htb-cpts/pwned-boxes/nibbles/
   # - title: "ZooZoo"
   #   url: /blogs/htb-cpts/zoozoo/
 
