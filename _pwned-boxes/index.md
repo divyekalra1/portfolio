@@ -10,36 +10,17 @@ hidden: true
 
 ---
 <html>
-<body>
-    <main>
-        <div class="publications-container">
 
-            {% assign htb_posts = site.pwned-boxes %}
-            {% if htb_posts %}
-            <ol>
-                {% for post in htb_posts %}
-                <div class="publication">
-                    <li>
-                    <h2 class="publication-title">
-                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                    </h2>
-                    </li>
-                    {% if post.date %}
-                    <p class="publication-date">{{ post.date | date: "%d %B, %Y" }}</p>
-                    {% endif %}
-                </div>
-                <hr class="publication-separator">
-                {% endfor %}
-            </ol>
-            {% else %}
-            <p>No HTB-CPTS posts found.</p>
-            {% endif %}
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MQ42FBLE9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-        </div>
-    </main>
+        gtag('config', 'G-9MQ42FBLE9');
+    </script>
 
-
-</body>
-
-
+</head>
 </html>
