@@ -7,7 +7,7 @@ main:
   - title: "Resume"
     url: /resume/
   - title: "Blogs"
-    url: /blogs/
+    url: https://rtd-personal-notes.readthedocs.io/en/latest/index.html#
   - title: "Publications"
     url: /publications/
   - title: "Contact"
