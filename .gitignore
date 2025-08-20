@@ -1,3 +1,5 @@
 *.asc
 *.txt
 _site/
+rtd-personal-notes/
+docs/
