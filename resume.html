@@ -13,48 +13,51 @@ permalink: /resume/
     /* Basic styling for the page */
 
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-    /* Styling for the main content */
-    main {
-      padding: 30px;
-    }
+main {
+  padding: 30px;
+}
 
-    /* Styling for the PDF viewer */
-    .pdf-container {
-      border: 1px solid #ccc;
-      height: 550px;
-      margin-bottom: 2%;
-      margin-left: 20%;
-      margin-right: 20%;
-    }
+.pdf-container {
+  border: 1px solid #ccc;
+  height: 70vh; /* Changed from fixed 700px to viewport height */
+  min-height: 70vh; /* Fallback minimum height */
+  margin-bottom: 2%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
 
-    /* Styling for the download button */
-    .new-tab-btn {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-left: 20%;
-      margin-right: 10%;
-      border-radius: 0%;
-      margin-top: 20% !important;
-      /* Adjust the margin as needed */
+.pdf-container iframe,
+.pdf-container embed,
+.pdf-container object {
+  width: 100%;
+  height: 100%;
+}
 
-    }
+.new-tab-btn {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 20%;
+  margin-right: 10%;
+  border-radius: 0%;
+  margin-top: 20% !important;
+}
 
-    .new-tab-btn:visited {
-      text-decoration: none;
-    }
+.new-tab-btn:visited {
+  text-decoration: none;
+}
 
-    a {
-      text-decoration: none;
-    }
+a {
+  text-decoration: none;
+}
   </style>
 </head>
 
@@ -71,7 +74,7 @@ permalink: /resume/
   <main>
     <section id="resume">
       <div class="pdf-container">
-        <object data="../divye-jhu-resume-final.pdf" width="1105" height="570" type='application/pdf'></object>
+        <object data="../divye-jhu-resume-final.pdf#zoom=125" width="1105" height="570" type='application/pdf'></object>
       </div>
       <a target="_blank" href="../divye-jhu-resume-final.pdf" class="new-tab-btn">Open Resume</a>
     </section>
