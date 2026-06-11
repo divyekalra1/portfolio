@@ -1,43 +1,38 @@
-# Astro Starter Kit: Minimal
+# divyekalra1.github.io/portfolio
+
+Personal website of Divye Kalra — portfolio, publications, and technical notes on security, cloud, and homelab engineering.
+
+Live at **https://divyekalra1.github.io/portfolio/**
+
+## Stack
+
+- [Astro 6](https://astro.build) static site, all content authored in Markdown
+- Tailwind CSS v4, IBM Plex Sans/Mono, dark/light theme
+- Hosted on GitHub Pages, deployed automatically by GitHub Actions on every push to `main`
+
+## Structure
+
+```
+src/content/notes/     technical notes (HTB CPTS, AWS, projects), grouped into series
+src/content/blog/      dated blog posts
+src/data/              publications and series metadata
+src/pages/             routes (home, notes, publications, resume, contact)
+public/                resume PDF, photo, PGP key
+```
+
+## Development
 
 ```sh
-pnpm create astro@latest -- --template minimal
+pnpm install
+pnpm dev        # local dev server
+pnpm build      # production build to dist/
+pnpm preview    # serve the production build locally
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The site is served under the `/portfolio` base path; internal links go through the `url()` helper in `src/utils/url.ts`. See `CLAUDE.md` for detailed conventions and content-editing recipes.
 
-## 🚀 Project Structure
+## Content
 
-Inside of your Astro project, you'll see the following folders and files:
+To add a note, drop a Markdown file with frontmatter (`title`, `description`, `series`, `order`, `tags`) into the appropriate folder under `src/content/notes/` — navigation, series sidebars, and indexes update automatically. Images live in a sibling `images/` directory and are optimized at build time.
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This site consolidates an earlier Jekyll portfolio and a ReadTheDocs notes site into a single repo (migrated June 2026).
