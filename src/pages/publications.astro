@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+import publications from '../data/publications.json';
+---
+
+<Base
+  title="Publications"
+  description="Patents and publications by Divye Kalra — lightweight cryptography, embedded systems security, and machine learning."
+>
+  <section class="py-12">
+    <p class="mono-label reveal reveal-1 mb-2">~/publications</p>
+    <h1 class="reveal reveal-2 font-mono text-3xl font-semibold tracking-tight">
+      Patents & Publications
+    </h1>
+
+    <ol class="reveal reveal-3 mt-10 space-y-6">
+      {
+        publications.map((pub, i) => (
+          <li class="card p-6">
+            <div class="flex items-start gap-4">
+              <span class="font-mono text-sm text-[var(--accent)]">
+                [{String(i + 1).padStart(2, '0')}]
+              </span>
+              <div>
+                <h2 class="text-lg font-semibold leading-snug">
+                  {pub.url ? (
+                    <a
+                      href={pub.url}
+                      target="_blank"
+                      rel="noopener"
+                      class="transition-colors hover:text-[var(--accent)]"
+                    >
+                      {pub.title}
+                    </a>
+                  ) : (
+                    pub.title
+                  )}
+                </h2>
+                <p class="mt-2 text-sm italic text-[var(--text-muted)]">{pub.authors}</p>
+                <p class="mt-1 font-mono text-xs text-[var(--text-muted)]">
+                  <span class="text-[var(--accent)]">{pub.kind}</span> · {pub.venue} · {pub.date}
+                </p>
+              </div>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="reveal reveal-4 mt-8 font-mono text-sm text-[var(--text-muted)]">
+      Full list on
+      <a
+        class="text-[var(--accent)] underline decoration-[color-mix(in_srgb,var(--accent)_40%,transparent)] underline-offset-4 hover:decoration-[var(--accent)]"
+        href="https://scholar.google.com.au/citations?user=1n8desUAAAAJ"
+        target="_blank"
+        rel="noopener">Google Scholar →</a
+      >
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../utils/url';
+---
+
+<Base title="404" description="Page not found.">
+  <section class="flex flex-col items-start gap-4 py-24 font-mono">
+    <p class="mono-label">error</p>
+    <h1 class="text-5xl font-semibold tracking-tight">404</h1>
+    <pre class="text-sm text-[var(--text-muted)]">$ curl {Astro.url.pathname}
+curl: (22) The requested URL returned error: 404</pre>
+    <a
+      href={url('/')}
+      class="mt-4 rounded-md border border-[var(--accent)] px-4 py-2 text-sm text-[var(--accent)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--bg)]"
+      >cd ~ →</a
+    >
+  </section>
+</Base>

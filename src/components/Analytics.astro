@@ -1,0 +1,19 @@
+---
+const enabled = import.meta.env.PROD;
+---
+
+{
+  enabled && (
+    <>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MQ42FBLE9" is:inline />
+      <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-9MQ42FBLE9');
+      </script>
+    </>
+  )
+}

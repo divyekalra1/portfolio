@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../utils/url';
+---
+
+<Base title="Resume" description="Resume of Divye Kalra — SDE intern at GlobalLogic and cybersecurity graduate from Johns Hopkins University.">
+  <section class="py-12">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <p class="mono-label reveal reveal-1 mb-2">~/resume</p>
+        <h1 class="reveal reveal-2 font-mono text-3xl font-semibold tracking-tight">Resume</h1>
+      </div>
+      <a
+        href={url('/divye-kalra-resume.pdf')}
+        download
+        class="reveal reveal-2 rounded-md border border-[var(--accent)] px-4 py-2 font-mono text-sm text-[var(--accent)] transition-colors hover:bg-[var(--accent)] hover:text-[var(--bg)]"
+        >download pdf ↓</a
+      >
+    </div>
+    <object
+      data={url('/divye-kalra-resume.pdf')}
+      type="application/pdf"
+      class="reveal reveal-3 mt-8 h-[80vh] w-full rounded-lg border border-[var(--border)]"
+    >
+      <p class="p-6 text-[var(--text-muted)]">
+        Your browser can't display PDFs inline —
+        <a class="text-[var(--accent)] underline" href={url('/divye-kalra-resume.pdf')}>download the resume</a> instead.
+      </p>
+    </object>
+  </section>
+</Base>

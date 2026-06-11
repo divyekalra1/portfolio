@@ -1,0 +1,89 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SeriesSidebar from '../../components/SeriesSidebar.astro';
+import PrevNext from '../../components/PrevNext.astro';
+import { series } from '../../data/series';
+import { url } from '../../utils/url';
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes');
+  return notes.map((note) => ({
+    params: { slug: note.id },
+    props: { note },
+  }));
+}
+
+const { note } = Astro.props;
+const { Content } = await render(note);
+
+const siblings = (await getCollection('notes', (n) => n.data.series === note.data.series)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const idx = siblings.findIndex((n) => n.id === note.id);
+const prev = idx > 0 ? siblings[idx - 1] : undefined;
+const next = idx < siblings.length - 1 ? siblings[idx + 1] : undefined;
+const meta = series[note.data.series];
+---
+
+<Base
+  title={note.data.title}
+  description={note.data.description || `${note.data.title} — notes by Divye Kalra`}
+  ogType="article"
+  width="max-w-7xl"
+>
+  <div class="flex gap-10 py-10">
+    <SeriesSidebar seriesName={meta.name} notes={siblings} currentId={note.id} />
+
+    <article class="min-w-0 flex-1">
+      <p class="mono-label mb-2">
+        <a href={url('/notes/')} class="hover:underline">~/notes</a> / {meta.name.toLowerCase()}
+      </p>
+      <h1 class="font-mono text-3xl font-semibold tracking-tight">{note.data.title}</h1>
+      {
+        note.data.tags.length > 0 && (
+          <div class="mt-3 flex flex-wrap gap-2 font-mono text-[11px] text-[var(--text-muted)]">
+            {note.data.tags.map((t) => (
+              <span>#{t}</span>
+            ))}
+          </div>
+        )
+      }
+
+      <!-- mobile series nav -->
+      <details class="mt-6 rounded-lg border border-[var(--border)] bg-[var(--bg-raised)] lg:hidden">
+        <summary class="cursor-pointer px-4 py-3 font-mono text-sm text-[var(--text-muted)]">
+          {meta.name} — all notes
+        </summary>
+        <ul class="border-t border-[var(--border)] px-4 py-3 text-sm">
+          {
+            siblings.map((n) => (
+              <li>
+                <a
+                  href={url(`/notes/${n.id}/`)}
+                  class:list={[
+                    'block py-1',
+                    n.id === note.id
+                      ? 'font-medium text-[var(--accent)]'
+                      : 'text-[var(--text-muted)] hover:text-[var(--text)]',
+                  ]}
+                >
+                  {n.data.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </details>
+
+      <div class="prose-site mt-8">
+        <Content />
+      </div>
+
+      <PrevNext
+        prev={prev && { href: url(`/notes/${prev.id}/`), title: prev.data.title }}
+        next={next && { href: url(`/notes/${next.id}/`), title: next.data.title }}
+      />
+    </article>
+  </div>
+</Base>

@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/500.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource/ibm-plex-mono/600.css';
+import Nav from '../components/Nav.astro';
+import { url } from '../utils/url';
+import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  ogType?: string;
+  /** tailwind max-width class for the page container */
+  width?: string;
+}
+
+const {
+  title,
+  description = 'Divye Kalra — SDE intern at GlobalLogic and cybersecurity graduate from Johns Hopkins University. Background in vehicle security, cryptography, and distributed systems.',
+  ogType = 'website',
+  width = 'max-w-4xl',
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const fullTitle = title === 'Divye Kalra' ? title : `${title} · Divye Kalra`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+    <link rel="alternate" type="application/rss+xml" title="Divye Kalra" href={url('/rss.xml')} />
+    <link rel="sitemap" href={url('/sitemap-index.xml')} />
+    <link rel="canonical" href={canonical} />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Divye Kalra" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+
+    <script is:inline>
+      // resolve theme before paint to avoid FOUC
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const theme =
+          stored ?? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script>
+
+    <Analytics />
+  </head>
+  <body class="relative min-h-screen antialiased">
+    <div class:list={['relative z-10 mx-auto flex min-h-screen flex-col px-5 sm:px-8', width]}>
+      <Nav />
+      <main class="flex-1 pb-20">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

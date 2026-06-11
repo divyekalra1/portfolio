@@ -1,0 +1,17 @@
+---
+import { url } from '../utils/url';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-[var(--border)] py-8">
+  <div class="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-[var(--text-muted)]">
+    <span>© {year} Divye Kalra</span>
+    <div class="flex gap-5">
+      <a class="transition-colors hover:text-[var(--accent)]" href="https://github.com/divyekalra1" target="_blank" rel="noopener">github</a>
+      <a class="transition-colors hover:text-[var(--accent)]" href="https://www.linkedin.com/in/divyekalra1/" target="_blank" rel="noopener">linkedin</a>
+      <a class="transition-colors hover:text-[var(--accent)]" href="https://scholar.google.com.au/citations?user=1n8desUAAAAJ" target="_blank" rel="noopener">scholar</a>
+      <a class="transition-colors hover:text-[var(--accent)]" href={url('/rss.xml')}>rss</a>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../utils/url';
+// @ts-ignore - vite raw import
+import pgpKeyRaw from '../../public/pgp-key.asc?raw';
+
+const pgpKey = pgpKeyRaw.trim();
+---
+
+<Base title="Contact" description="Get in touch with Divye Kalra — email, GitHub, LinkedIn, or PGP-encrypted mail.">
+  <section class="py-12">
+    <p class="mono-label reveal reveal-1 mb-2">~/contact</p>
+    <h1 class="reveal reveal-2 font-mono text-3xl font-semibold tracking-tight">Get in Touch</h1>
+
+    <div class="reveal reveal-3 mt-8 grid gap-4 sm:grid-cols-3">
+      <a href="mailto:divyekalra2@gmail.com" class="card group p-5">
+        <p class="mono-label mb-1">email</p>
+        <p class="font-mono text-sm group-hover:text-[var(--accent)]">divyekalra2@gmail.com</p>
+      </a>
+      <a href="https://github.com/divyekalra1" target="_blank" rel="noopener" class="card group p-5">
+        <p class="mono-label mb-1">github</p>
+        <p class="font-mono text-sm group-hover:text-[var(--accent)]">divyekalra1</p>
+      </a>
+      <a href="https://www.linkedin.com/in/divyekalra1/" target="_blank" rel="noopener" class="card group p-5">
+        <p class="mono-label mb-1">linkedin</p>
+        <p class="font-mono text-sm group-hover:text-[var(--accent)]">in/divyekalra1</p>
+      </a>
+    </div>
+
+    <div class="reveal reveal-4 mt-12">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <h2 class="font-mono text-lg font-medium">
+          <span class="text-[var(--accent)]">$</span> gpg --import divye.asc
+        </h2>
+        <div class="flex gap-3 font-mono text-xs">
+          <button
+            id="copy-pgp"
+            type="button"
+            class="rounded-md border border-[var(--border)] px-3 py-1.5 text-[var(--text-muted)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            >copy</button
+          >
+          <a
+            href={url('/pgp-key.asc')}
+            download
+            class="rounded-md border border-[var(--border)] px-3 py-1.5 text-[var(--text-muted)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            >download .asc</a
+          >
+        </div>
+      </div>
+      <p class="mt-2 text-sm text-[var(--text-muted)]">
+        Prefer encrypted mail? Use my PGP public key below.
+      </p>
+      <pre
+        id="pgp-block"
+        class="mt-4 max-h-72 overflow-auto rounded-lg border border-[var(--border)] bg-[var(--bg-inset)] p-4 font-mono text-[11px] leading-relaxed text-[var(--text-muted)]">{pgpKey}</pre>
+    </div>
+  </section>
+</Base>
+
+<script>
+  const btn = document.getElementById('copy-pgp');
+  const block = document.getElementById('pgp-block');
+  btn?.addEventListener('click', async () => {
+    if (!block?.textContent) return;
+    await navigator.clipboard.writeText(block.textContent.trim());
+    btn.textContent = 'copied ✓';
+    setTimeout(() => (btn.textContent = 'copy'), 1500);
+  });
+</script>

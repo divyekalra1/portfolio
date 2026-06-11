@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Efficient and lightweight data encryption scheme for embedded systems using 3D-LFS chaotic map and NFSR",
+    "authors": "Manish Kumar, Divye Kalra",
+    "venue": "e-Prime — Advances in Electrical Engineering, Electronics and Energy",
+    "date": "September 2023",
+    "kind": "Journal article",
+    "url": "https://doi.org/10.1016/j.prime.2023.100273"
+  },
+  {
+    "title": "Machine-Learning-Based Accurate Prediction of Vanadium Redox Flow Battery Temperature Rise Under Different Charge–Discharge Conditions",
+    "authors": "Anirudh Narayan D, Akshat Johar, Divye Kalra, Bhavya Ardeshna, Ankur Bhattacharjee",
+    "venue": "Energy Storage",
+    "date": "2025",
+    "kind": "Journal article",
+    "url": "https://doi.org/10.1002/est2.70087"
+  },
+  {
+    "title": "Frodo-160: Design and Hardware Implementation of a Lightweight Stream Cipher for Embedded Systems",
+    "authors": "Divye Kalra, Manish Kumar, Ramakant Yadav",
+    "venue": "Indian Patent — Official Journal of the Patent Office, Issue No. 49/2023",
+    "date": "December 8, 2023",
+    "kind": "Patent",
+    "url": null
+  }
+]

@@ -1,0 +1,46 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+import { url } from '../utils/url';
+
+const links = [
+  { href: url('/notes/'), label: '~/notes' },
+  { href: url('/publications/'), label: '~/publications' },
+  { href: url('/resume/'), label: '~/resume' },
+  { href: url('/contact/'), label: '~/contact' },
+];
+
+const path = Astro.url.pathname;
+const home = url('/');
+const isHome = path === home || path === home.replace(/\/$/, '');
+const isActive = (href: string) => path === href || path.startsWith(href);
+---
+
+<header class="py-6">
+  <nav class="flex flex-wrap items-center gap-x-5 gap-y-3 font-mono text-sm">
+    <a
+      href={home}
+      class:list={[
+        'mr-auto font-semibold tracking-tight transition-colors',
+        isHome ? 'text-[var(--accent)]' : 'text-[var(--text)] hover:text-[var(--accent)]',
+      ]}
+    >
+      <span class="text-[var(--accent)]">$</span> divyekalra
+    </a>
+    {
+      links.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            'transition-colors',
+            isActive(href)
+              ? 'text-[var(--accent)]'
+              : 'text-[var(--text-muted)] hover:text-[var(--text)]',
+          ]}
+        >
+          {label}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </nav>
+</header>

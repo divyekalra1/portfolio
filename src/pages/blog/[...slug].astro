@@ -1,0 +1,39 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { url } from '../../utils/url';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Base title={post.data.title} description={post.data.description} ogType="article">
+  <article class="mx-auto max-w-3xl py-10">
+    <p class="mono-label mb-2">
+      <a href={url('/blog/')} class="hover:underline">~/blog</a>
+    </p>
+    <h1 class="font-mono text-3xl font-semibold tracking-tight">{post.data.title}</h1>
+    <div class="mt-3 flex flex-wrap items-center gap-4 font-mono text-xs text-[var(--text-muted)]">
+      <time datetime={post.data.pubDate.toISOString()}>
+        {post.data.pubDate.toISOString().slice(0, 10)}
+      </time>
+      {
+        post.data.updatedDate && (
+          <span>updated {post.data.updatedDate.toISOString().slice(0, 10)}</span>
+        )
+      }
+      {post.data.tags.map((t) => <span>#{t}</span>)}
+    </div>
+    <div class="prose-site mt-8">
+      <Content />
+    </div>
+  </article>
+</Base>

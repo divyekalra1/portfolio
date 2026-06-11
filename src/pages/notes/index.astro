@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { series, seriesOrder } from '../../data/series';
+import { url } from '../../utils/url';
+
+const notes = await getCollection('notes');
+
+const grouped = seriesOrder
+  .map((id) => ({
+    meta: series[id],
+    notes: notes.filter((n) => n.data.series === id).sort((a, b) => a.data.order - b.data.order),
+  }))
+  .filter((g) => g.notes.length > 0);
+---
+
+<Base
+  title="Notes"
+  description="Technical notes by Divye Kalra — HackTheBox CPTS, security projects, AWS, and homelab engineering."
+>
+  <section class="py-12">
+    <p class="mono-label reveal reveal-1 mb-2">~/notes</p>
+    <h1 class="reveal reveal-2 font-mono text-3xl font-semibold tracking-tight">Notes</h1>
+    <p class="reveal reveal-3 mt-4 max-w-2xl leading-relaxed text-[var(--text-muted)]">
+      My public notebook — a place where I think out loud, document what I'm building, and break down
+      things I don't want to forget. Structured guides, messy explorations turned useful, and honest
+      documentation of wins and mistakes. Clarity over perfection.
+    </p>
+
+    <div class="reveal reveal-4 mt-10 space-y-12">
+      {
+        grouped.map(({ meta, notes }) => (
+          <div id={meta.id}>
+            <div class="flex items-baseline justify-between gap-3">
+              <h2 class="font-mono text-xl font-medium">
+                <span class="text-[var(--accent)]">##</span> {meta.name}
+              </h2>
+              <span class="font-mono text-xs text-[var(--text-muted)]">
+                {notes.length} {notes.length === 1 ? 'note' : 'notes'}
+              </span>
+            </div>
+            <p class="mt-2 max-w-2xl text-sm text-[var(--text-muted)]">{meta.blurb}</p>
+            <ul class="mt-5 divide-y divide-[var(--border)] rounded-lg border border-[var(--border)] bg-[var(--bg-raised)]">
+              {notes.map((note, i) => (
+                <li>
+                  <a
+                    href={url(`/notes/${note.id}/`)}
+                    class="group flex items-baseline gap-4 px-5 py-3 transition-colors hover:bg-[var(--bg-inset)]"
+                  >
+                    <span class="shrink-0 font-mono text-xs text-[var(--text-muted)]">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span class="font-medium transition-colors group-hover:text-[var(--accent)]">
+                      {note.data.title}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Base>
