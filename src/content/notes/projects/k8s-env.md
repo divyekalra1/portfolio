@@ -232,3 +232,5 @@ It works, but it's not perfect:
 Two scripts, one VM, and I can go from a blank Ubuntu install to a cluster I can actually deploy things to without remembering a single `kubeadm` flag. The disk resize and SSH config were small fixes, but they're the kind of thing that annoys you a little bit every day until you finally deal with it.
 
 Now the fun part: actually breaking things on it.
+
+**Update:** the cluster is now managed by ArgoCD. See [Part 2](../k8s-argocd/).
