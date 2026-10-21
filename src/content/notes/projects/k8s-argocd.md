@@ -173,6 +173,10 @@ Here's what `web-apps` looked like in `k9s` after the test, back at two replicas
 
 ![k9s showing nginx-service as a ClusterIP service on port 80 in web-apps](./images/argocd-web-apps-services.png)
 
+## What's Next
+
+The nginx test proved the loop works. Next I want to put something real through it. I'm working on a dev project that I'll package as a Docker image and deploy to this cluster. I'll define its deployments, services, ingresses and everything else it needs in the repo, and ArgoCD will handle the rest. That will be its own post.
+
 ## Conclusion
 
 The cluster is now managed from a Git repo. Adding something to it means writing a manifest and pushing, and backing out a change means `git revert`. The nginx manifests are just there for testing, but the setup doesn't care what's in `yaml-files/`, so anything real I put on this box from now on goes through the same loop.
