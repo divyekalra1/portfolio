@@ -4,4 +4,5 @@ description: "Bind vs reverse shells, payload generation, web shells, and spawni
 series: htb-cpts
 order: 6
 tags: ["htb", "shells", "payloads"]
+draft: true
 ---

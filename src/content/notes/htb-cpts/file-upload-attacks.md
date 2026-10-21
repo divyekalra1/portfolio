@@ -4,4 +4,5 @@ description: "Bypassing upload filters and validation to achieve remote code exe
 series: htb-cpts
 order: 14
 tags: ["htb", "web", "upload"]
+draft: true
 ---

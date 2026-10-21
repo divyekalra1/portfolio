@@ -4,4 +4,5 @@ description: "Stored, reflected, and DOM-based XSS — discovery, exploitation, 
 series: htb-cpts
 order: 12
 tags: ["htb", "web", "xss"]
+draft: true
 ---

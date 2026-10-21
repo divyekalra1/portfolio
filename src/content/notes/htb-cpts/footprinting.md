@@ -4,4 +4,5 @@ description: "Enumerating infrastructure services — FTP, SMB, NFS, DNS, SMTP, 
 series: htb-cpts
 order: 5
 tags: ["htb", "recon", "enumeration"]
+draft: true
 ---

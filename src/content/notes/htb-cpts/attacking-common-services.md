@@ -4,4 +4,5 @@ description: "Attacking FTP, SMB, SQL, RDP, DNS, and email services — misconfi
 series: htb-cpts
 order: 7
 tags: ["htb", "services"]
+draft: true
 ---

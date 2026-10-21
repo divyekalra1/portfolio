@@ -21,6 +21,7 @@ const notes = defineCollection({
     series: z.enum(['htb-cpts', 'aws', 'projects']),
     order: z.number(),
     tags: z.array(z.string()).default([]),
+    draft: z.boolean().default(false),
   }),
 });
 

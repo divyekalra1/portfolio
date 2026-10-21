@@ -4,4 +4,5 @@ description: "Union-based injection, database enumeration, reading/writing files
 series: htb-cpts
 order: 10
 tags: ["htb", "web", "sqli"]
+draft: true
 ---

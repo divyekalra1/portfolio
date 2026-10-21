@@ -4,4 +4,5 @@ description: "HTTP verb tampering, IDOR, and XXE injection attacks."
 series: htb-cpts
 order: 16
 tags: ["htb", "web"]
+draft: true
 ---

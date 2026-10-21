@@ -4,4 +4,5 @@ description: "Directory, vhost, parameter, and value fuzzing with ffuf."
 series: htb-cpts
 order: 9
 tags: ["htb", "web", "fuzzing"]
+draft: true
 ---

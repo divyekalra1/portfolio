@@ -4,4 +4,5 @@ description: "LFI/RFI, PHP wrappers, log poisoning, and path traversal technique
 series: htb-cpts
 order: 13
 tags: ["htb", "web", "lfi"]
+draft: true
 ---

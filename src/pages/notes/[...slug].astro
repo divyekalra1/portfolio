@@ -7,7 +7,7 @@ import { series } from '../../data/series';
 import { url } from '../../utils/url';
 
 export async function getStaticPaths() {
-  const notes = await getCollection('notes');
+  const notes = await getCollection('notes', ({ data }) => !data.draft);
   return notes.map((note) => ({
     params: { slug: note.id },
     props: { note },
@@ -17,7 +17,7 @@ export async function getStaticPaths() {
 const { note } = Astro.props;
 const { Content } = await render(note);
 
-const siblings = (await getCollection('notes', (n) => n.data.series === note.data.series)).sort(
+const siblings = (await getCollection('notes', (n) => n.data.series === note.data.series && !n.data.draft)).sort(
   (a, b) => a.data.order - b.data.order
 );
 const idx = siblings.findIndex((n) => n.id === note.id);

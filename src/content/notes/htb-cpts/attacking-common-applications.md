@@ -4,4 +4,5 @@ description: "Attacking WordPress, Joomla, Tomcat, Jenkins, Splunk, and other co
 series: htb-cpts
 order: 17
 tags: ["htb", "web", "applications"]
+draft: true
 ---
